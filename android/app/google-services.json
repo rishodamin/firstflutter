@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "269595857942",
+    "project_id": "myapp-29f08",
+    "storage_bucket": "myapp-29f08.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269595857942:android:77a31a030b8c5a00dc9137",
+        "android_client_info": {
+          "package_name": "com.damin.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXiI-drfSkD9Xxmj0loL-P6EmZwn-MuE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
