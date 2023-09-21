@@ -20,6 +20,7 @@ void main() {
       loginRoute: (context) => const LoginView(),
       registerRoute: (context) => const RegisterView(),
       notesRoute: (context) => const NotesView(),
+      verifyEmailRoute: (context) => const VerifyEmailView(),
     },
   ));
 }
@@ -38,11 +39,7 @@ class HomePage extends StatelessWidget {
           case ConnectionState.done:
             final user = FirebaseAuth.instance.currentUser;
             if (user != null) {
-              if (user.emailVerified) {
-                return const NotesView();
-              } else {
-                return const VerifyEmailView();
-              }
+              return const NotesView();
             } else {
               return const LoginView();
             }
@@ -66,6 +63,7 @@ class NotesView extends StatefulWidget {
 class _NotesViewState extends State<NotesView> {
   @override
   Widget build(BuildContext context) {
+    String? user = FirebaseAuth.instance.currentUser?.email ?? "Stalker";
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.white,
@@ -95,7 +93,12 @@ class _NotesViewState extends State<NotesView> {
           })
         ],
       ),
-      body: const Text('Hello world'),
+      body: Center(
+        child: Text(
+          'Hi $user',
+          style: const TextStyle(fontSize: 28),
+        ),
+      ),
     );
   }
 }
