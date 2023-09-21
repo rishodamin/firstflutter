@@ -30,10 +30,8 @@ class _RegisterViewState extends State<RegisterView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Register',
-          style: TextStyle(color: Colors.white),
-        ),
+        foregroundColor: Colors.white,
+        title: const Text('Register'),
         backgroundColor: Colors.blue[600],
         elevation: 5,
         shadowColor: Colors.grey,

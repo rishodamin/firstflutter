@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -49,6 +43,16 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyCZoc49RFSY0rDXOZP0Kmp65PEevUbP6IU',
+    appId: '1:269595857942:web:e5a9711caf2998a9dc9137',
+    messagingSenderId: '269595857942',
+    projectId: 'myapp-29f08',
+    authDomain: 'myapp-29f08.firebaseapp.com',
+    storageBucket: 'myapp-29f08.appspot.com',
+    measurementId: 'G-7H45S1XPLY',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBXiI-drfSkD9Xxmj0loL-P6EmZwn-MuE0',
     appId: '1:269595857942:android:77a31a030b8c5a00dc9137',
@@ -64,5 +68,14 @@ class DefaultFirebaseOptions {
     projectId: 'myapp-29f08',
     storageBucket: 'myapp-29f08.appspot.com',
     iosBundleId: 'com.damin.myapp',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCa9agMKtNpeQF-mLuaxr_OSZQDCjOwSC0',
+    appId: '1:269595857942:ios:e04509c497ec92c6dc9137',
+    messagingSenderId: '269595857942',
+    projectId: 'myapp-29f08',
+    storageBucket: 'myapp-29f08.appspot.com',
+    iosBundleId: 'com.damin.myapp.RunnerTests',
   );
 }
